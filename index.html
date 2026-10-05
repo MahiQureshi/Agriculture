@@ -1,0 +1,1999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OrangePlant AI | Smart Planting Material Assessment</title>
+
+    <meta
+        name="description"
+        content="AI-assisted orange nursery planting material quality assessment prototype."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     APP BACKGROUND
+========================================================= -->
+
+<div class="background-orb orb-orange"></div>
+<div class="background-orb orb-blue"></div>
+<div class="background-orb orb-purple"></div>
+
+<!-- =========================================================
+     MOBILE OVERLAY
+========================================================= -->
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- =========================================================
+     APP SHELL
+========================================================= -->
+
+<div class="app-shell">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🍊
+            </div>
+
+            <div class="brand-text">
+                <strong>OrangePlant</strong>
+                <span>AI</span>
+            </div>
+
+        </div>
+
+        <div class="brand-subtitle">
+            Smart Planting Material
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <button class="nav-item active" data-page="dashboard">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </button>
+
+            <button class="nav-item" data-page="scanner">
+                <span class="nav-icon">◉</span>
+                <span>Plant Scanner</span>
+            </button>
+
+            <button class="nav-item" data-page="batch">
+                <span class="nav-icon">▦</span>
+                <span>Batch Assessment</span>
+            </button>
+
+            <button class="nav-item" data-page="analytics">
+                <span class="nav-icon">◒</span>
+                <span>Analytics</span>
+            </button>
+
+            <button class="nav-item" data-page="history">
+                <span class="nav-icon">☷</span>
+                <span>Assessment History</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="system-status">
+                <span class="status-dot"></span>
+
+                <div>
+                    <strong>AI System</strong>
+                    <small>Prototype Online</small>
+                </div>
+            </div>
+
+            <button class="nav-item" data-page="about">
+                <span class="nav-icon">?</span>
+                <span>About System</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="main-area">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button class="mobile-menu" id="mobileMenu">
+                ☰
+            </button>
+
+            <div class="topbar-title">
+
+                <span class="eyebrow">
+                    AI-ASSISTED AGRICULTURAL INTELLIGENCE
+                </span>
+
+                <h1 id="pageTitle">
+                    Smart Planting Material Assessment
+                </h1>
+
+            </div>
+
+            <div class="topbar-actions">
+
+                <div class="live-status">
+                    <span class="status-dot"></span>
+                    System Online
+                </div>
+
+                <!-- DARK MODE TOGGLE -->
+                <button
+                    class="theme-toggle"
+                    id="themeToggle"
+                    aria-label="Toggle dark mode"
+                >
+                    <span class="theme-sun">☀</span>
+                    <span class="theme-moon">☾</span>
+                    <span class="theme-knob"></span>
+                </button>
+
+                <div class="profile-chip">
+                    <div class="profile-avatar">OP</div>
+
+                    <div class="profile-info">
+                        <strong>OrangePlant AI</strong>
+                        <span>Prototype</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE CONTAINER
+        ================================================== -->
+
+        <div class="page-container">
+
+
+            <!-- =================================================
+                 DASHBOARD
+            ================================================== -->
+
+            <section class="page active-page" id="dashboard">
+
+                <div class="hero-card">
+
+                    <div class="hero-content">
+
+                        <div class="hero-badge">
+                            <span>✦</span>
+                            AI-POWERED NURSERY SCREENING
+                        </div>
+
+                        <h2>
+                            Smarter selection.
+                            <span>Healthier orchards.</span>
+                        </h2>
+
+                        <p>
+                            Screen orange nursery plants using AI-assisted
+                            visual assessment of health, vigour, visible
+                            symptoms and planting-material quality.
+                        </p>
+
+                        <div class="hero-buttons">
+
+                            <button
+                                class="primary-button"
+                                data-page="scanner"
+                            >
+                                <span>◉</span>
+                                Scan New Plant
+                                <b>→</b>
+                            </button>
+
+                            <button
+                                class="secondary-button"
+                                data-page="batch"
+                            >
+                                View Batch Analytics
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="hero-visual">
+
+                        <div class="plant-orbit orbit-one"></div>
+                        <div class="plant-orbit orbit-two"></div>
+
+                        <div class="hero-plant">
+                            <div class="plant-glow"></div>
+                            <div class="plant-symbol">🌱</div>
+                        </div>
+
+                        <div class="floating-tag tag-health">
+                            <span>●</span>
+                            Healthy
+                        </div>
+
+                        <div class="floating-tag tag-ai">
+                            <span>✦</span>
+                            AI Vision
+                        </div>
+
+                        <div class="floating-tag tag-score">
+                            <strong>91</strong>
+                            <small>Quality</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK STAT CARDS -->
+
+                <div class="stats-grid">
+
+                    <article class="stat-card orange-card">
+
+                        <div class="stat-icon">🍊</div>
+
+                        <div>
+                            <span>Total Plants Screened</span>
+                            <strong id="totalPlants">1,248</strong>
+                            <small>↑ 12.4% this month</small>
+                        </div>
+
+                    </article>
+
+
+                    <article class="stat-card green-card">
+
+                        <div class="stat-icon">✓</div>
+
+                        <div>
+                            <span>Suitable Plants</span>
+                            <strong id="suitablePlants">846</strong>
+                            <small>68% of screened plants</small>
+                        </div>
+
+                    </article>
+
+
+                    <article class="stat-card yellow-card">
+
+                        <div class="stat-icon">!</div>
+
+                        <div>
+                            <span>Needs Review</span>
+                            <strong id="reviewPlants">247</strong>
+                            <small>Human verification</small>
+                        </div>
+
+                    </article>
+
+
+                    <article class="stat-card red-card">
+
+                        <div class="stat-icon">×</div>
+
+                        <div>
+                            <span>Rejected</span>
+                            <strong id="rejectedPlants">155</strong>
+                            <small>Visible quality concerns</small>
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- DASHBOARD CHART AREA -->
+
+                <div class="dashboard-grid">
+
+                    <article class="glass-card chart-card large-chart">
+
+                        <div class="card-header">
+
+                            <div>
+                                <span class="card-kicker">SCREENING ACTIVITY</span>
+                                <h3>Plants screened over time</h3>
+                            </div>
+
+                            <div class="segmented-control">
+
+                                <button class="chart-period active" data-period="week">
+                                    Weekly
+                                </button>
+
+                                <button class="chart-period" data-period="month">
+                                    Monthly
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <div class="line-chart" id="screeningChart">
+
+                            <div class="chart-grid-lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <svg viewBox="0 0 800 280" preserveAspectRatio="none">
+
+                                <defs>
+
+                                    <linearGradient
+                                        id="orangeGradient"
+                                        x1="0"
+                                        x2="0"
+                                        y1="0"
+                                        y2="1"
+                                    >
+                                        <stop
+                                            offset="0%"
+                                            stop-color="#ff7a00"
+                                            stop-opacity=".45"
+                                        />
+
+                                        <stop
+                                            offset="100%"
+                                            stop-color="#ff7a00"
+                                            stop-opacity="0"
+                                        />
+
+                                    </linearGradient>
+
+                                </defs>
+
+                                <path
+                                    id="chartArea"
+                                    d="M0 220 C90 170 120 195 190 140 C260 90 290 150 360 120 C430 90 450 110 520 80 C590 45 650 90 800 35 L800 280 L0 280 Z"
+                                    fill="url(#orangeGradient)"
+                                />
+
+                                <path
+                                    id="chartLine"
+                                    d="M0 220 C90 170 120 195 190 140 C260 90 290 150 360 120 C430 90 450 110 520 80 C590 45 650 90 800 35"
+                                    fill="none"
+                                    stroke="#ff7a00"
+                                    stroke-width="5"
+                                    stroke-linecap="round"
+                                />
+
+                            </svg>
+
+                            <div class="chart-tooltip" id="chartTooltip">
+                                184 plants
+                            </div>
+
+                        </div>
+
+                        <div class="chart-labels">
+                            <span>Mon</span>
+                            <span>Tue</span>
+                            <span>Wed</span>
+                            <span>Thu</span>
+                            <span>Fri</span>
+                            <span>Sat</span>
+                            <span>Sun</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="glass-card chart-card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <span class="card-kicker">QUALITY DISTRIBUTION</span>
+                                <h3>Plant decisions</h3>
+                            </div>
+
+                            <button class="icon-button" title="More options">
+                                ⋮
+                            </button>
+
+                        </div>
+
+                        <div class="donut-wrapper">
+
+                            <div
+                                class="donut-chart"
+                                id="qualityDonut"
+                            >
+                                <div class="donut-center">
+                                    <strong>1,248</strong>
+                                    <span>Plants</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="legend-list">
+
+                            <div>
+                                <span class="legend-dot suitable"></span>
+                                <span>Suitable</span>
+                                <strong>68%</strong>
+                            </div>
+
+                            <div>
+                                <span class="legend-dot review"></span>
+                                <span>Review</span>
+                                <strong>20%</strong>
+                            </div>
+
+                            <div>
+                                <span class="legend-dot reject"></span>
+                                <span>Reject</span>
+                                <strong>12%</strong>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <!-- RECENT ASSESSMENTS -->
+
+                <article class="glass-card table-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <span class="card-kicker">RECENT ACTIVITY</span>
+                            <h3>Recent assessments</h3>
+                        </div>
+
+                        <button
+                            class="text-button"
+                            data-page="history"
+                        >
+                            View all →
+                        </button>
+
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Plant ID</th>
+                                    <th>Batch</th>
+                                    <th>Quality Score</th>
+                                    <th>Disease Risk</th>
+                                    <th>Decision</th>
+                                    <th>Time</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="recentTableBody"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 SCANNER
+            ================================================== -->
+
+            <section class="page" id="scanner">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="card-kicker">COMPUTER VISION</span>
+                        <h2>AI Plant Scanner</h2>
+                        <p>
+                            Upload a clear image of an orange nursery plant
+                            for AI-assisted quality screening.
+                        </p>
+                    </div>
+
+                    <div class="scanner-mode">
+
+                        <span>Mode</span>
+
+                        <div class="mode-toggle">
+
+                            <button class="mode-option active" data-mode="single">
+                                Single Plant
+                            </button>
+
+                            <button class="mode-option" data-mode="batch">
+                                Batch
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="scanner-layout">
+
+                    <!-- IMAGE UPLOAD -->
+
+                    <article class="glass-card upload-card">
+
+                        <div class="upload-header">
+
+                            <div>
+                                <span class="card-kicker">IMAGE INPUT</span>
+                                <h3>Plant image</h3>
+                            </div>
+
+                            <span class="image-quality-badge" id="imageQualityBadge">
+                                Waiting
+                            </span>
+
+                        </div>
+
+
+                        <div
+                            class="drop-zone"
+                            id="dropZone"
+                        >
+
+                            <input
+                                type="file"
+                                id="plantImageInput"
+                                accept="image/*"
+                                hidden
+                            >
+
+                            <div
+                                class="upload-placeholder"
+                                id="uploadPlaceholder"
+                            >
+
+                                <div class="upload-icon">
+                                    ↑
+                                </div>
+
+                                <h3>Drop your plant image here</h3>
+
+                                <p>
+                                    or click to browse from your device
+                                </p>
+
+                                <small>
+                                    JPG, PNG or WEBP • Clear plant view recommended
+                                </small>
+
+                                <button
+                                    class="outline-button"
+                                    id="browseButton"
+                                >
+                                    Choose Image
+                                </button>
+
+                            </div>
+
+
+                            <div
+                                class="image-preview-container"
+                                id="imagePreviewContainer"
+                            >
+
+                                <img
+                                    id="plantPreview"
+                                    alt="Uploaded orange plant"
+                                >
+
+                                <div
+                                    class="ai-overlay"
+                                    id="aiOverlay"
+                                >
+
+                                    <div class="cv-box leaf-box">
+                                        <span>Leaf Region</span>
+                                    </div>
+
+                                    <div class="cv-box canopy-box">
+                                        <span>Canopy</span>
+                                    </div>
+
+                                    <div class="cv-box stem-box">
+                                        <span>Stem</span>
+                                    </div>
+
+                                </div>
+
+                                <button
+                                    class="remove-image"
+                                    id="removeImage"
+                                    title="Remove image"
+                                >
+                                    ×
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="image-controls">
+
+                            <button
+                                class="secondary-button small"
+                                id="overlayToggle"
+                            >
+                                <span>◈</span>
+                                AI Overlay
+                            </button>
+
+                            <span class="image-tip">
+                                Best results: full plant + good lighting
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PLANT INFORMATION -->
+
+                    <article class="glass-card plant-info-card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <span class="card-kicker">PLANT RECORD</span>
+                                <h3>Plant information</h3>
+                            </div>
+
+                            <span class="record-status">
+                                Draft
+                            </span>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <label class="form-field">
+
+                                <span>Plant ID</span>
+
+                                <input
+                                    type="text"
+                                    id="plantId"
+                                    value="ORG-2026-001"
+                                >
+
+                            </label>
+
+
+                            <label class="form-field">
+
+                                <span>Batch ID</span>
+
+                                <input
+                                    type="text"
+                                    id="batchId"
+                                    value="NAG-OR-042"
+                                >
+
+                            </label>
+
+
+                            <label class="form-field full">
+
+                                <span>Nursery</span>
+
+                                <select id="nursery">
+
+                                    <option>Orange Nursery — Nagpur</option>
+                                    <option>Nursery A — Saoner</option>
+                                    <option>Nursery B — Nagpur</option>
+                                    <option>Planting Material Centre</option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label class="form-field">
+
+                                <span>Plant Age</span>
+
+                                <select id="plantAge">
+
+                                    <option>6–8 months</option>
+                                    <option selected>8–12 months</option>
+                                    <option>12–18 months</option>
+                                    <option>18+ months</option>
+
+                                </select>
+
+                            </label>
+
+
+                            <label class="form-field">
+
+                                <span>Variety</span>
+
+                                <select id="variety">
+
+                                    <option>Nagpur Mandarin</option>
+                                    <option>Sweet Orange</option>
+                                    <option>Local Reference Variety</option>
+                                    <option>Other</option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="capture-guide">
+
+                            <div class="guide-icon">✦</div>
+
+                            <div>
+
+                                <strong>Standardized capture guide</strong>
+
+                                <p>
+                                    Use a plain background, consistent camera
+                                    distance, clear leaves and minimal shadows.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="primary-button full-button"
+                            id="analyzeButton"
+                        >
+                            <span>✦</span>
+                            Run AI Assessment
+                            <b>→</b>
+                        </button>
+
+                    </article>
+
+                </div>
+
+
+                <!-- SCANNING PANEL -->
+
+                <article
+                    class="glass-card scanning-panel hidden"
+                    id="scanningPanel"
+                >
+
+                    <div class="scanner-animation">
+
+                        <div class="scan-circle">
+                            <div class="scan-inner">
+                                🍊
+                            </div>
+                        </div>
+
+                        <div class="scan-line"></div>
+
+                    </div>
+
+                    <div class="scanning-content">
+
+                        <span class="card-kicker">
+                            AI INFERENCE LAYER
+                        </span>
+
+                        <h2 id="scanTitle">
+                            Analyzing plant...
+                        </h2>
+
+                        <p id="scanDescription">
+                            Initializing computer vision pipeline.
+                        </p>
+
+                        <div class="progress-track">
+
+                            <div
+                                class="progress-bar"
+                                id="scanProgress"
+                            ></div>
+
+                        </div>
+
+                        <strong
+                            class="progress-number"
+                            id="scanPercentage"
+                        >
+                            0%
+                        </strong>
+
+                        <div class="scan-steps">
+
+                            <span class="scan-step active">
+                                <i>✓</i>
+                                Image quality
+                            </span>
+
+                            <span class="scan-step">
+                                <i>2</i>
+                                Plant structure
+                            </span>
+
+                            <span class="scan-step">
+                                <i>3</i>
+                                Leaf analysis
+                            </span>
+
+                            <span class="scan-step">
+                                <i>4</i>
+                                Disease screening
+                            </span>
+
+                            <span class="scan-step">
+                                <i>5</i>
+                                Quality score
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- RESULT -->
+
+                <div
+                    class="assessment-result hidden"
+                    id="assessmentResult"
+                >
+
+                    <div class="result-header">
+
+                        <div>
+
+                            <span class="card-kicker">
+                                ASSESSMENT COMPLETE
+                            </span>
+
+                            <h2>Plant quality assessment</h2>
+
+                        </div>
+
+                        <button
+                            class="secondary-button"
+                            id="newAssessmentButton"
+                        >
+                            + New Assessment
+                        </button>
+
+                    </div>
+
+
+                    <div class="result-hero-grid">
+
+                        <article class="glass-card result-decision-card">
+
+                            <div class="decision-glow"></div>
+
+                            <span class="decision-label">
+                                RECOMMENDATION
+                            </span>
+
+                            <div
+                                class="decision-status suitable"
+                                id="decisionStatus"
+                            >
+                                <span>✓</span>
+                                SUITABLE
+                            </div>
+
+                            <p id="decisionText">
+                                Strong visual indicators of healthy and
+                                vigorous growth.
+                            </p>
+
+                            <div class="score-ring">
+
+                                <svg viewBox="0 0 120 120">
+
+                                    <circle
+                                        cx="60"
+                                        cy="60"
+                                        r="50"
+                                        class="score-background"
+                                    ></circle>
+
+                                    <circle
+                                        cx="60"
+                                        cy="60"
+                                        r="50"
+                                        class="score-progress"
+                                        id="scoreProgress"
+                                    ></circle>
+
+                                </svg>
+
+                                <div class="score-value">
+
+                                    <strong id="overallScore">
+                                        91
+                                    </strong>
+
+                                    <span>/100</span>
+
+                                </div>
+
+                            </div>
+
+                            <span class="score-caption">
+                                Overall Quality Score
+                            </span>
+
+                        </article>
+
+
+                        <div class="quality-metrics">
+
+                            <article class="metric-card orange-border">
+
+                                <div class="metric-top">
+                                    <span>Plant Health</span>
+                                    <b>94%</b>
+                                </div>
+
+                                <div class="metric-progress">
+                                    <span style="width:94%"></span>
+                                </div>
+
+                                <small>Healthy visual indicators</small>
+
+                            </article>
+
+
+                            <article class="metric-card blue-border">
+
+                                <div class="metric-top">
+                                    <span>Plant Vigour</span>
+                                    <b>89%</b>
+                                </div>
+
+                                <div class="metric-progress">
+                                    <span style="width:89%"></span>
+                                </div>
+
+                                <small>Strong growth pattern</small>
+
+                            </article>
+
+
+                            <article class="metric-card cyan-border">
+
+                                <div class="metric-top">
+                                    <span>Leaf Condition</span>
+                                    <b>92%</b>
+                                </div>
+
+                                <div class="metric-progress">
+                                    <span style="width:92%"></span>
+                                </div>
+
+                                <small>Uniform leaf appearance</small>
+
+                            </article>
+
+
+                            <article class="metric-card purple-border">
+
+                                <div class="metric-top">
+                                    <span>Plant Structure</span>
+                                    <b>91%</b>
+                                </div>
+
+                                <div class="metric-progress">
+                                    <span style="width:91%"></span>
+                                </div>
+
+                                <small>Good canopy structure</small>
+
+                            </article>
+
+
+                            <article class="metric-card yellow-border">
+
+                                <div class="metric-top">
+                                    <span>Disease Risk</span>
+                                    <b>8%</b>
+                                </div>
+
+                                <div class="metric-progress">
+                                    <span style="width:8%"></span>
+                                </div>
+
+                                <small>Low visible symptom risk</small>
+
+                            </article>
+
+
+                            <article class="metric-card red-border">
+
+                                <div class="metric-top">
+                                    <span>Physical Damage</span>
+                                    <b>Low</b>
+                                </div>
+
+                                <div class="metric-progress">
+                                    <span style="width:14%"></span>
+                                </div>
+
+                                <small>Minimal visible damage</small>
+
+                            </article>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EXPLANATION -->
+
+                    <div class="result-grid">
+
+                        <article class="glass-card explanation-card">
+
+                            <div class="card-header">
+
+                                <div>
+
+                                    <span class="card-kicker">
+                                        EXPLAINABLE AI
+                                    </span>
+
+                                    <h3>Why this plant was selected</h3>
+
+                                </div>
+
+                                <span class="confidence-badge">
+                                    91% Confidence
+                                </span>
+
+                            </div>
+
+                            <div class="explanation-list">
+
+                                <div>
+                                    <span class="explain-check">✓</span>
+                                    <p>Uniform green leaf colour detected.</p>
+                                </div>
+
+                                <div>
+                                    <span class="explain-check">✓</span>
+                                    <p>Good canopy density and structure.</p>
+                                </div>
+
+                                <div>
+                                    <span class="explain-check">✓</span>
+                                    <p>No major visible lesion pattern.</p>
+                                </div>
+
+                                <div>
+                                    <span class="explain-check">✓</span>
+                                    <p>Strong visual indicators of vigour.</p>
+                                </div>
+
+                                <div>
+                                    <span class="explain-check">✓</span>
+                                    <p>Minimal visible physical damage.</p>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="glass-card verification-card">
+
+                            <div class="card-header">
+
+                                <div>
+
+                                    <span class="card-kicker">
+                                        VARIETAL CHECK
+                                    </span>
+
+                                    <h3>True-to-Type</h3>
+
+                                </div>
+
+                                <span class="verification-status">
+                                    Verification
+                                </span>
+
+                            </div>
+
+                            <div class="verification-score">
+
+                                <strong>78%</strong>
+
+                                <span>Visual Match</span>
+
+                            </div>
+
+                            <div class="verification-list">
+
+                                <div>
+                                    Leaf Shape
+                                    <span>✓</span>
+                                </div>
+
+                                <div>
+                                    Leaf Size
+                                    <span>✓</span>
+                                </div>
+
+                                <div>
+                                    Growth Habit
+                                    <span>✓</span>
+                                </div>
+
+                                <div>
+                                    Canopy Pattern
+                                    <span>✓</span>
+                                </div>
+
+                            </div>
+
+                            <div class="notice-box">
+                                Visual characteristics are consistent with
+                                the selected reference variety. Genetic
+                                identity requires additional verification.
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- HUMAN VERIFICATION -->
+
+                    <article class="glass-card human-review-card">
+
+                        <div class="human-review-heading">
+
+                            <div>
+
+                                <span class="card-kicker">
+                                    HUMAN-IN-THE-LOOP
+                                </span>
+
+                                <h3>Expert verification</h3>
+
+                            </div>
+
+                            <span class="review-confidence">
+                                Recommended for final confirmation
+                            </span>
+
+                        </div>
+
+                        <div class="review-form">
+
+                            <label class="form-field">
+
+                                <span>Reviewer</span>
+
+                                <select id="reviewerName">
+
+                                    <option>Select reviewer</option>
+                                    <option>Nursery Expert</option>
+                                    <option>Horticulture Officer</option>
+                                    <option>Quality Inspector</option>
+
+                                </select>
+
+                            </label>
+
+                            <label class="form-field review-observation">
+
+                                <span>Observation</span>
+
+                                <input
+                                    type="text"
+                                    id="reviewObservation"
+                                    placeholder="Add expert observation..."
+                                >
+
+                            </label>
+
+                            <div class="review-actions">
+
+                                <button
+                                    class="approve-button"
+                                    id="approveButton"
+                                >
+                                    ✓ Approve
+                                </button>
+
+                                <button
+                                    class="review-button"
+                                    id="reviewButton"
+                                >
+                                    ! Further Testing
+                                </button>
+
+                                <button
+                                    class="reject-button"
+                                    id="rejectButton"
+                                >
+                                    × Reject
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 BATCH
+            ================================================== -->
+
+            <section class="page" id="batch">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="card-kicker">NURSERY OPERATIONS</span>
+                        <h2>Batch Assessment</h2>
+                        <p>
+                            Review the quality distribution of an entire
+                            nursery planting-material batch.
+                        </p>
+                    </div>
+
+                    <button
+                        class="primary-button"
+                        id="generateBatchButton"
+                    >
+                        ✦ Generate Demo Batch
+                    </button>
+
+                </div>
+
+
+                <div class="batch-info-grid">
+
+                    <article class="glass-card batch-info">
+
+                        <span class="card-kicker">BATCH ID</span>
+                        <strong>NAG-OR-042</strong>
+                        <small>Orange Nursery — Nagpur</small>
+
+                    </article>
+
+                    <article class="glass-card batch-info blue-accent">
+
+                        <span class="card-kicker">TOTAL PLANTS</span>
+                        <strong id="batchTotal">100</strong>
+                        <small>Plants in batch</small>
+
+                    </article>
+
+                    <article class="glass-card batch-info purple-accent">
+
+                        <span class="card-kicker">ANALYZED</span>
+                        <strong id="batchAnalyzed">100</strong>
+                        <small>100% screened</small>
+
+                    </article>
+
+                    <article class="glass-card batch-info cyan-accent">
+
+                        <span class="card-kicker">AVG SCORE</span>
+                        <strong id="batchAverage">84.7</strong>
+                        <small>Overall quality</small>
+
+                    </article>
+
+                </div>
+
+
+                <div class="batch-result-grid">
+
+                    <article class="glass-card batch-distribution">
+
+                        <div class="card-header">
+
+                            <div>
+                                <span class="card-kicker">
+                                    BATCH OUTCOME
+                                </span>
+
+                                <h3>Quality distribution</h3>
+                            </div>
+
+                        </div>
+
+
+                        <div class="batch-bars">
+
+                            <div class="batch-bar-row">
+
+                                <div>
+                                    <span>Suitable</span>
+                                    <strong>71%</strong>
+                                </div>
+
+                                <div class="batch-track">
+                                    <span
+                                        class="batch-fill green-fill"
+                                        style="width:71%"
+                                    ></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="batch-bar-row">
+
+                                <div>
+                                    <span>Review</span>
+                                    <strong>17%</strong>
+                                </div>
+
+                                <div class="batch-track">
+                                    <span
+                                        class="batch-fill yellow-fill"
+                                        style="width:17%"
+                                    ></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="batch-bar-row">
+
+                                <div>
+                                    <span>Reject</span>
+                                    <strong>12%</strong>
+                                </div>
+
+                                <div class="batch-track">
+                                    <span
+                                        class="batch-fill red-fill"
+                                        style="width:12%"
+                                    ></span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="glass-card efficiency-card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <span class="card-kicker">
+                                    SCREENING EFFICIENCY
+                                </span>
+
+                                <h3>Plants screened / hour</h3>
+                            </div>
+
+                        </div>
+
+                        <div class="efficiency-number">
+
+                            <strong>286</strong>
+
+                            <span>plants / hour</span>
+
+                        </div>
+
+                        <div class="mini-bars">
+
+                            <span style="height:40%"></span>
+                            <span style="height:58%"></span>
+                            <span style="height:45%"></span>
+                            <span style="height:72%"></span>
+                            <span style="height:66%"></span>
+                            <span style="height:88%"></span>
+                            <span style="height:80%"></span>
+                            <span style="height:96%"></span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <article class="glass-card batch-table-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <span class="card-kicker">
+                                PLANT DISTRIBUTION
+                            </span>
+
+                            <h3>Batch screening records</h3>
+                        </div>
+
+                        <button
+                            class="secondary-button small"
+                            id="exportBatchButton"
+                        >
+                            ↓ Export Report
+                        </button>
+
+                    </div>
+
+                    <div class="batch-mini-grid">
+
+                        <div class="mini-stat suitable-mini">
+                            <span>Suitable</span>
+                            <strong>71</strong>
+                        </div>
+
+                        <div class="mini-stat review-mini">
+                            <span>Review</span>
+                            <strong>17</strong>
+                        </div>
+
+                        <div class="mini-stat reject-mini">
+                            <span>Reject</span>
+                            <strong>12</strong>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 ANALYTICS
+            ================================================== -->
+
+            <section class="page" id="analytics">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="card-kicker">
+                            DATA INTELLIGENCE
+                        </span>
+
+                        <h2>Analytics</h2>
+
+                        <p>
+                            Monitor quality patterns, screening efficiency
+                            and assessment consistency.
+                        </p>
+
+                    </div>
+
+                    <div class="segmented-control">
+
+                        <button class="analytics-period active">
+                            Weekly
+                        </button>
+
+                        <button class="analytics-period">
+                            Monthly
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="analytics-stat-grid">
+
+                    <article class="analytics-stat orange-accent">
+                        <span>Average Quality Score</span>
+                        <strong>84.7</strong>
+                        <small>↑ 4.8%</small>
+                    </article>
+
+                    <article class="analytics-stat blue-accent">
+                        <span>Disease Risk Detected</span>
+                        <strong>11.8%</strong>
+                        <small>Visible symptoms</small>
+                    </article>
+
+                    <article class="analytics-stat purple-accent">
+                        <span>Screening Time</span>
+                        <strong>12s</strong>
+                        <small>Per plant demo value</small>
+                    </article>
+
+                    <article class="analytics-stat cyan-accent">
+                        <span>Plants / Hour</span>
+                        <strong>286</strong>
+                        <small>Prototype benchmark</small>
+                    </article>
+
+                </div>
+
+
+                <div class="analytics-grid">
+
+                    <article class="glass-card analytics-chart-card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <span class="card-kicker">
+                                    QUALITY TREND
+                                </span>
+
+                                <h3>Average quality score</h3>
+                            </div>
+
+                            <span class="chart-value">
+                                84.7
+                            </span>
+
+                        </div>
+
+                        <div class="fake-line-chart">
+
+                            <svg viewBox="0 0 800 260" preserveAspectRatio="none">
+
+                                <defs>
+
+                                    <linearGradient
+                                        id="blueGradient"
+                                        x1="0"
+                                        x2="0"
+                                        y1="0"
+                                        y2="1"
+                                    >
+                                        <stop
+                                            offset="0%"
+                                            stop-color="#3b82f6"
+                                            stop-opacity=".35"
+                                        />
+
+                                        <stop
+                                            offset="100%"
+                                            stop-color="#3b82f6"
+                                            stop-opacity="0"
+                                        />
+
+                                    </linearGradient>
+
+                                </defs>
+
+                                <path
+                                    d="M0 200 C100 190 130 150 200 165 C280 180 320 115 390 135 C460 150 500 80 570 105 C650 125 690 60 800 75 L800 260 L0 260 Z"
+                                    fill="url(#blueGradient)"
+                                />
+
+                                <path
+                                    d="M0 200 C100 190 130 150 200 165 C280 180 320 115 390 135 C460 150 500 80 570 105 C650 125 690 60 800 75"
+                                    fill="none"
+                                    stroke="#3b82f6"
+                                    stroke-width="5"
+                                    stroke-linecap="round"
+                                />
+
+                            </svg>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="glass-card analytics-chart-card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <span class="card-kicker">
+                                    HEALTH VS VIGOUR
+                                </span>
+
+                                <h3>Assessment comparison</h3>
+                            </div>
+
+                        </div>
+
+                        <div class="comparison-chart">
+
+                            <div class="compare-column">
+                                <span style="height:92%"></span>
+                                <small>Leaf</small>
+                            </div>
+
+                            <div class="compare-column">
+                                <span style="height:89%"></span>
+                                <small>Vigour</small>
+                            </div>
+
+                            <div class="compare-column">
+                                <span style="height:94%"></span>
+                                <small>Health</small>
+                            </div>
+
+                            <div class="compare-column">
+                                <span style="height:91%"></span>
+                                <small>Structure</small>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <article class="glass-card insight-card">
+
+                    <div class="insight-icon">✦</div>
+
+                    <div>
+
+                        <span class="card-kicker">
+                            AI INSIGHT
+                        </span>
+
+                        <h3>
+                            Most screened plants are currently within the
+                            healthy visual-quality range.
+                        </h3>
+
+                        <p>
+                            Plants with lower confidence scores should be
+                            routed through human verification before final
+                            nursery selection.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 HISTORY
+            ================================================== -->
+
+            <section class="page" id="history">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="card-kicker">
+                            DIGITAL RECORDS
+                        </span>
+
+                        <h2>Assessment History</h2>
+
+                        <p>
+                            Search and review previously assessed plants.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="secondary-button"
+                        id="clearHistoryButton"
+                    >
+                        Clear Demo Records
+                    </button>
+
+                </div>
+
+
+                <article class="glass-card history-card">
+
+                    <div class="history-toolbar">
+
+                        <div class="search-box">
+
+                            <span>⌕</span>
+
+                            <input
+                                type="search"
+                                id="historySearch"
+                                placeholder="Search plant ID, batch or nursery..."
+                            >
+
+                        </div>
+
+
+                        <select id="historyFilter">
+
+                            <option value="all">All decisions</option>
+                            <option value="Suitable">Suitable</option>
+                            <option value="Review">Review</option>
+                            <option value="Reject">Reject</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Plant ID</th>
+                                    <th>Batch</th>
+                                    <th>Nursery</th>
+                                    <th>Score</th>
+                                    <th>Disease</th>
+                                    <th>Decision</th>
+                                    <th>Date</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="historyTableBody"></tbody>
+
+                        </table>
+
+                    </div>
+
+                    <div
+                        class="empty-state hidden"
+                        id="emptyHistory"
+                    >
+                        <div>◎</div>
+                        <h3>No records found</h3>
+                        <p>Try another search or filter.</p>
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 ABOUT
+            ================================================== -->
+
+            <section class="page" id="about">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="card-kicker">
+                            SYSTEM OVERVIEW
+                        </span>
+
+                        <h2>About OrangePlant AI</h2>
+
+                        <p>
+                            A browser-based prototype demonstrating an
+                            AI-assisted orange planting-material screening
+                            workflow.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <article class="glass-card about-main">
+
+                        <div class="about-logo">
+                            🍊
+                        </div>
+
+                        <span class="card-kicker">
+                            ORANGEPLANT AI
+                        </span>
+
+                        <h2>
+                            From plant image to
+                            <span>planting decision.</span>
+                        </h2>
+
+                        <p>
+                            OrangePlant AI demonstrates how computer vision,
+                            explainable assessment and human verification can
+                            support standardized nursery plant screening.
+                        </p>
+
+                        <div class="workflow">
+
+                            <div>
+                                <b>01</b>
+                                <span>Capture</span>
+                            </div>
+
+                            <i>→</i>
+
+                            <div>
+                                <b>02</b>
+                                <span>Analyze</span>
+                            </div>
+
+                            <i>→</i>
+
+                            <div>
+                                <b>03</b>
+                                <span>Assess</span>
+                            </div>
+
+                            <i>→</i>
+
+                            <div>
+                                <b>04</b>
+                                <span>Verify</span>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="glass-card tech-card">
+
+                        <span class="card-kicker">
+                            PROTOTYPE ARCHITECTURE
+                        </span>
+
+                        <h3>Current implementation</h3>
+
+                        <div class="tech-stack">
+
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>LocalStorage</span>
+                            <span>SVG Charts</span>
+                            <span>Computer Vision UI</span>
+
+                        </div>
+
+                        <div class="prototype-note">
+
+                            <strong>Prototype note</strong>
+
+                            <p>
+                                The current browser prototype uses a
+                                JavaScript inference simulation to demonstrate
+                                the complete user workflow. A production
+                                deployment can replace this layer with models
+                                trained on locally relevant orange nursery
+                                datasets.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     TOAST NOTIFICATION
+========================================================= -->
+
+<div class="toast" id="toast">
+
+    <span class="toast-icon">✓</span>
+
+    <div>
+        <strong id="toastTitle">Success</strong>
+        <p id="toastMessage">Action completed.</p>
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     REVIEW SUCCESS MODAL
+========================================================= -->
+
+<div class="modal-backdrop hidden" id="reviewModal">
+
+    <div class="modal-card">
+
+        <button
+            class="modal-close"
+            id="modalClose"
+        >
+            ×
+        </button>
+
+        <div class="modal-icon">
+            ✓
+        </div>
+
+        <span class="card-kicker">
+            RECORD UPDATED
+        </span>
+
+        <h2>Assessment verified</h2>
+
+        <p>
+            The human verification decision has been added to the
+            digital plant record.
+        </p>
+
+        <button
+            class="primary-button full-button"
+            id="modalDone"
+        >
+            Done
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
